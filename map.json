@@ -1,0 +1,14 @@
+{
+  "trail_help": "Loader: J K G g M 0 E c C G 6   Kernel: k b c d A B 2 C P q r s",
+  "blocks": [
+    {"id": "loader", "title": "UEFI loader", "hw": "BOOTX64.EFI", "files": ["src/boot/main.asm", "src/boot/BOOTX64.EFI"], "letters": "JKGgM0EcCG6"},
+    {"id": "gop", "title": "GOP framebuffer", "hw": "GPU linear FB", "files": ["src/boot/main.asm", "src/drivers/gop_stamp.c", "src/drivers/screen.c"], "letters": "Gg"},
+    {"id": "serial", "title": "COM1 serial", "hw": "port 0x3F8", "files": ["src/boot/entry64.asm", "src/kernel/kernel.c"], "letters": "0kbcAB2"},
+    {"id": "cpu", "title": "CPU long mode", "hw": "CS 0x18 EFER.LME", "files": ["src/boot/entry64.asm", "src/cpu/gdt.c", "src/cpu/idt.c", "src/cpu/interrupt64.asm"], "letters": "kbcd"},
+    {"id": "mmu", "title": "MMU / paging", "hw": "CR3 PML4 at 8MiB", "files": ["src/kernel/paging.c", "src/include/mem_map.h"], "letters": "CPqrs"},
+    {"id": "pic", "title": "PIC / timer", "hw": "8259 + PIT", "files": ["src/cpu/pic.c", "src/drivers/timer.c"], "letters": ""},
+    {"id": "nvme", "title": "NVMe", "hw": "PCI 8086:F1A8", "files": ["src/drivers/nvme.c", "src/drivers/disk.c"], "letters": ""},
+    {"id": "usb", "title": "USB", "hw": "XHCI / UHCI", "files": ["src/drivers/usb.c", "src/drivers/usb_uhci.c", "src/drivers/usb_msc.c"], "letters": ""},
+    {"id": "csf1", "title": "CSF1", "hw": "volume + CrashDump", "files": ["src/fs/csf1.c", "src/kernel/crash_dump.c"], "letters": ""}
+  ]
+}
